@@ -64,7 +64,7 @@ def contact():
             s.login(smtp_user, smtp_pass)
             s.send_message(msg)
 
-        return jsonify({"ok": True, "message": "Message envoyé ✅"}), 201
+        return jsonify({"ok": True, "message": "Message envoyé "}), 201
 
     except KeyError as e:
         print("Config missing:", e)

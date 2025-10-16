@@ -21,7 +21,7 @@ export default function Home() {
       title: "Bienvenue !",
       subtitle: "Merci de visiter mon portfolio.",
       lead:
-        "Je suis Yacine Malmi, ingénieur électricien. Parcourez mes projets d’intégration éolienne et réseaux.",
+        "Je suis Yacine Malmi, ingénieur électricien.",
       cta: "Entrer sur le site",
       langLabel: "Langue",
     },
@@ -29,7 +29,7 @@ export default function Home() {
       title: "Welcome!",
       subtitle: "Thanks for visiting my portfolio.",
       lead:
-        "I’m Yacine Malmi, an electrical engineer. Explore my wind integration and power systems projects.",
+        "I’m Yacine Malmi, an electrical engineer. ",
       cta: "Enter the website",
       langLabel: "Language",
     },
@@ -72,7 +72,7 @@ export default function Home() {
         return;
       }
 
-      setStatus({ state: "success", message: data.message || "Message envoyé ✅" });
+      setStatus({ state: "success", message: data.message || "Message envoyé " });
       setForm({ name: "", email: "", message: "", company: "" });
     } catch {
       setStatus({ state: "error", message: "Impossible de joindre le serveur." });

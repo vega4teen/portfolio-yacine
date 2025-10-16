@@ -8,7 +8,7 @@ export default function Footer() {
 
         {/* Bloc centre : bouton contact */}
         <div className="footer-action">
-          <Link to="/contact" className="btn btn-footer">📨 Me contacter</Link>
+          <Link to="/contact" className="btn btn-footer"> Me contacter</Link>
         </div>
 
         {/* Bloc droit : signature */}

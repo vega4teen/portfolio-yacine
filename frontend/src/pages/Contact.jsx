@@ -59,14 +59,14 @@ export default function Contact() {
 
         {/* Boutons rapides */}
         <div className="contact-cta">
-          <a href="mailto:malmiyacine14@gmail.com" className="btn primary">📩 Envoyer un e-mail</a>
+          <a href="mailto:malmiyacine14@gmail.com" className="btn primary"> Envoyer un e-mail</a>
           <a
             href="https://www.linkedin.com/in/yacine-malmi-2b3865254/"
             target="_blank"
             rel="noreferrer"
             className="btn secondary"
           >
-            🔗 Voir mon LinkedIn
+             Voir mon LinkedIn
           </a>
         </div>
       </div>

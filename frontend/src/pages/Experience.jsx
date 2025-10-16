@@ -28,7 +28,7 @@ export default function Experience() {
       <article className="card">
         <div className="card-head">
           <h3> ParamTranche (Accès instantané via QR codes)</h3>
-          <span className="status success">✅ En production — Lorraine</span>
+          <span className="status success"> En production — Lorraine</span>
         </div>
 
         <div className="grid-2">
@@ -143,7 +143,7 @@ export default function Experience() {
 <article className="card oncf">
   <header className="card-head">
     <h3> Stagiaire Électrotechnique Alimentation Sans Interruption & Signalisation Ferroviaire</h3>
-     <span className="status warm">📍 Office National des Chemins de Fer (ONCF) — Maroc</span>
+     <span className="status warm"> Office National des Chemins de Fer (ONCF) — Maroc</span>
   </header>
 
   <p className="xp-subtitle">Avril 2022 → Juillet 2022 • Stage sur site (4 mois)</p>

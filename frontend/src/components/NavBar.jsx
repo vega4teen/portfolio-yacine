@@ -20,7 +20,7 @@ export default function NavBar() {
     <header className="nav" role="banner">
       <div className="nav-brand">
         <a href="#home" className="brand" onClick={close}>
-          <span className="brand-dot" aria-hidden="true" /> Yacine<span className="brand-accent">.👨‍💻ML⚡</span>
+          <span className="brand-dot" aria-hidden="true" /> Yacine<span className="brand-accent">.ML</span>
         </a>
       </div>
 
