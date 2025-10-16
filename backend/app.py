@@ -1,10 +1,12 @@
 # app.py
-from flask import Flask, request, jsonify
+from pathlib import Path
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 import os, re, smtplib, time
 from email.message import EmailMessage
 
-app = Flask(__name__)
+# Sert les fichiers statiques React depuis backend/dist
+app = Flask(__name__, static_folder="dist", static_url_path="")
 CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 EMAIL_RE = re.compile(r"^[^@\s]+@[^@\s]+\.[^@\s]+$")
@@ -18,10 +20,6 @@ def rate_limit(ip, limit=6, window=60):
     t.append(now)
     RATE_BUCKET[ip] = t
     return True
-
-@app.get("/")
-def root():
-    return "✅ Portfolio backend up. Try /api/health"
 
 @app.get("/api/health")
 def health():
@@ -78,5 +76,16 @@ def contact():
         print("SMTP error:", e)
         return jsonify({"ok": False, "error": "smtp-error"}), 500
 
+# Routes statiques + fallback SPA React
+@app.route("/", defaults={"path": ""})
+@app.route("/<path:path>")
+def serve_spa(path):
+    dist = Path(app.static_folder)
+    file_path = dist / path
+    if path and file_path.exists():
+        return send_from_directory(dist, path)
+    return send_from_directory(dist, "index.html")
+
 if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=5000, debug=True)
+    # 0.0.0.0 + PORT env pour Render
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
