@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import App from "./App";
-import PortfolioOnePage from "./pages/OnePage"; // ✅ le bon import
+import PortfolioOnePage from "./pages/OnePage"; 
 import "./styles.css";
 
 const router = createBrowserRouter([
@@ -11,7 +11,7 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />, // garde NavBar + Footer
     children: [
-      { index: true, element: <PortfolioOnePage /> }, // ✅ ta page one-page
+      { index: true, element: <PortfolioOnePage /> }, 
     ],
   },
   // (optionnel) 404
